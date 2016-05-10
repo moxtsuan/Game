@@ -117,7 +117,12 @@ void arr_output( int arr[][SIZE], int len, int wid )
 {
     int i, j;
     
+    for ( i=0; i<wid+2; i++ ) {
+        printf("-");
+    }
+    putchar('\n');
     for ( i=0; i<len; i++ ) {
+        putchar('|');
         for ( j=0; j<wid; j++ ) {
             if ( arr[i][j] == 0 ) {
                 printf(" ");
@@ -125,10 +130,14 @@ void arr_output( int arr[][SIZE], int len, int wid )
                 printf("■");
             }
         }
+        putchar('|');
         putchar('\n');
-        
     }
     
+    for ( i=0; i<wid+2; i++ ) {
+        printf("-");
+    }
+    putchar('\n');
 }
 
 void arr_copy( int arr1[][SIZE], int arr0[][SIZE], int len, int wid )
